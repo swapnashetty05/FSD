@@ -49,6 +49,9 @@
 		</table>	
 		<button>SAVE</button>		
 	</form>
+	</br>
+
+<hr/>
 	<jsp:include page="footer.jsp" />
 </body>
 </html>

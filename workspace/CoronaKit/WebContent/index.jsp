@@ -6,10 +6,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>SPS Corona Kit Online Store</title>
+<h1>SPS Corona Kit Online Store</h1>
+<p>Best Online shopping store for COVID-19 products.</p>
+<hr />
 </head>
 <body>
-	<jsp:include page="header.jsp" />
-	
+
+
 	<c:if test="${msg != null }">
 		<p>
 			<strong>${msg }</strong>
@@ -18,34 +21,50 @@
 	<h2>Please login If you are Admin</h2>
 	<form action="adminlistProduct" method="post">
 		<div>
-			<div><label for="loginid">Enter login Id</label> </div>
-			<div><input type="text" id="loginid" name="loginid" > </div>
+			<div>
+				<label for="loginid">Enter login Id</label>
+			</div>
+			<div>
+				<input type="text" id="loginid" name="loginid">
+			</div>
 		</div>
 		</br>
 		<div>
-			<div><label for="password">Enter password</label> </div>
-			<div><input type="password" id="password" name="password"> </div>
+			<div>
+				<label for="password">Enter password</label>
+			</div>
+			<div>
+				<input type="password" id="password" name="password">
+			</div>
 		</div>
 		</br>
 		<div>
-			<div><input type="submit" value="Login"> </div>
+			<div>
+				<input type="submit" value="Login">
+			</div>
 		</div>
 	</form>
-</div>
+	</div>
 
-</br>
-</br>
-<div>
-<h2>Are you a new user who wants to order corona kit from us? Please click here     <a href="newuser"><button>Create Corona Kit</button></a> </h2>
-	
-</div>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-<hr/>	
+	</br>
+	</br>
+	<div>
+		<h2>
+			Are you a new user who wants to order corona kit from us? Please
+			click here <a href="newuser"><button>Create Corona Kit</button></a>
+		</h2>
+
+	</div>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	<hr />
 	<jsp:include page="footer.jsp" />
 </body>
 </html>

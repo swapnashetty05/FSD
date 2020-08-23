@@ -53,7 +53,7 @@ public class AdminLoginFilter implements Filter {
 			chain.doFilter(request, response);
 
 		} else if (loginRequest && !(username.equals("Admin") && password.equals("Admin"))) {
-			request.setAttribute("msg", "username or password error!");
+			request.setAttribute("msg", "username or password is incorrect!");
 			rd = request.getRequestDispatcher("index.jsp");
 			rd.include(request, response);
 		} else if (!req.getRequestURI().contains("admin") || req.getRequestURI().contains("logout")) {
