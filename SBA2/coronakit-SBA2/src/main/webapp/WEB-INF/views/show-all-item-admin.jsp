@@ -33,6 +33,7 @@
 
  <div class="collapse navbar-collapse" id="collapsibleNavbar">
 	<ul class="navbar-nav">
+	
  		<li class="nav-item">
 	        <a class="nav-link" href="${pageContext.request.contextPath }/admin/home">ADMIN DASHBOARD</a>
 	      </li> 
@@ -60,7 +61,7 @@
         <c:otherwise>  
             <table class="table table-striped table-hover">  
                 <tr>  
-                    <th>Product id#</th>  
+                   <!--  <th>Product id</th>   -->
                     <th>Product Name</th>  
                     <th>Product Cost</th>  
                     <th>Product Description</th>   
@@ -68,12 +69,12 @@
                 </tr>  
                 <c:forEach items="${productlist}" var="product">  
                     <tr>  
-                        <td>${product.id }</td>  
+                         <!-- <td>${product.id }</td>   -->
                         <td>${product.productName }</td>  
                         <td>${product.cost }</td>  
                         <td>${product.productDescription}</td>                        
                         <td>
-                        <a class="btn btn-sm btn-danger" href="${pageContext.request.contextPath }/admin/product-delete?productId=${product.id}">DELETE</a>                       
+                        <a class="btn pull-right btn-primary" href="${pageContext.request.contextPath }/admin/product-delete?productId=${product.id}">DELETE</a>                       
                         </td>
                     </tr>  
                 </c:forEach>  

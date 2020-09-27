@@ -32,9 +32,11 @@
 		</button>
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
+				<!-- 
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath }/admin/home">ADMIN
 						DASHBOARD</a></li>
+						 -->
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath }/admin/product-list">Products
 						List</a></li>
@@ -46,6 +48,7 @@
 			</ul>
 		</div>
 	</nav>
+	  
 	<c:if test="${msg != null }">
 		<div class="container-fluid">
 			<div class="alert alert-success">

@@ -26,18 +26,19 @@
 </head>
 <body>
 <jsp:include page="/header" />
-<h1 class="jumbotron">This is User Dashboard</h1>
+<h1 class="jumbotron">Welcome to User Dashboard</h1>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
  <div class="collapse navbar-collapse" id="collapsibleNavbar">
  	<ul class="navbar-nav">
- 		<li class="nav-item">
-	        <a class="nav-link" href="${pageContext.request.contextPath }/user/home">USER DASHBOARD</a>
-	      </li> 
+ 		
 		<li class="nav-item">
-	        <a class="nav-link" href="${pageContext.request.contextPath }/user/show-list">Products List To Add</a>
+	        <a class="nav-link" href="${pageContext.request.contextPath }/user/show-list">Products List</a>
+	     </li>
+	     <li class="nav-item">
+	        <a class="nav-link" href="${pageContext.request.contextPath }/user/show-list">Show Kit Details</a>
 	     </li>
 	     <li class="nav-item">
 	      	  <a class="nav-link" href="${pageContext.request.contextPath }/logout">Sign Out</a>

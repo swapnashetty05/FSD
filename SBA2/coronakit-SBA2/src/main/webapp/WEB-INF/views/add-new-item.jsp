@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,57 +25,63 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-<jsp:include page="/header" />
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
- <div class="collapse navbar-collapse" id="collapsibleNavbar">
- 	<ul class="navbar-nav">
- 		<li class="nav-item">
-	        <a class="nav-link" href="${pageContext.request.contextPath }/admin/home">ADMIN DASHBOARD</a>
-	      </li> 
-		<li class="nav-item">
-	        <a class="nav-link" href="${pageContext.request.contextPath }/admin/product-list">Products List</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="${pageContext.request.contextPath }/admin/product-entry">Add Product</a>
-	      </li>
-	 </ul> 
-	 </div>
-	 </nav>
- <h3 class="jumbotron">Add New Product</h3>
- <section class="container-fluid p-4">
- <div class="col-sm-4">
-<form:form action="${pageContext.request.contextPath }/admin/product-save" method="post" modelAttribute="product">  
-     
-    <br/>        
-		<div class="form-group"> 
-            <form:label path="productName">Product Name</form:label>  
-            <form:input type="text" path="productName" class="form-control"/>  
-            <form:errors path="productName" class="alert alert-warning"/>
-        </div> 
-    <br/>         
-        <div class="form-group">
-            <form:label path="cost">Product Cost</form:label>  
-            <form:input type="number" path="cost" class="form-control" />  
-            <form:errors path="cost" class="alert alert-warning"/>
-        </div>
-    <br/>          
-        <div class="form-group">  
-            <form:label path="productDescription">Product Description</form:label>  
-            <form:input type="text" path="productDescription" class="form-control"/>  
-            <form:errors path="productDescription" class="alert alert-warning"/>
-        </div>  
-    <br/>   
-    	<div class="form-group">                          
-        <button class="btn pull-right btn-primary">SAVE</button>
-    	</div>       
-    <br/>             
-    </form:form> 
-   </div> 
-</section>
+	<jsp:include page="/header" />
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath }/admin/home">ADMIN
+						DASHBOARD</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath }/admin/product-list">Products
+						List</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath }/admin/product-entry">Add
+						Product</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath }/logout">Sign Out</a></li>
+			</ul>
+		</div>
+	</nav>
+	<h3 class="jumbotron">Add New Product</h3>
+	<section class="container-fluid p-4">
+		<div class="col-sm-4">
+			<form:form
+				action="${pageContext.request.contextPath }/admin/product-save"
+				method="post" modelAttribute="product">
 
-<jsp:include page="/footer" />
+				<br />
+				<div class="form-group">
+					<form:label path="productName">Product Name</form:label>
+					<form:input type="text" path="productName" class="form-control" />
+					<form:errors path="productName" class="alert alert-warning" />
+				</div>
+				<br />
+				<div class="form-group">
+					<form:label path="cost">Product Cost</form:label>
+					<form:input type="number" path="cost" class="form-control" />
+					<form:errors path="cost" class="alert alert-warning" />
+				</div>
+				<br />
+				<div class="form-group">
+					<form:label path="productDescription">Product Description</form:label>
+					<form:input type="text" path="productDescription"
+						class="form-control" />
+					<form:errors path="productDescription" class="alert alert-warning" />
+				</div>
+				<br />
+				<div class="form-group">
+					<button class="btn pull-right btn-primary">SAVE</button>
+				</div>
+				<br />
+			</form:form>
+		</div>
+	</section>
+
+	<jsp:include page="/footer" />
 </body>
 </html>
