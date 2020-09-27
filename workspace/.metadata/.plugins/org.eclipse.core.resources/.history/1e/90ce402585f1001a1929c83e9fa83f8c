@@ -1,0 +1,73 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@swapnashetty05 
+avamsykiran
+/
+wellsfargoFSD
+2
+11
+Code
+Issues
+Pull requests
+8
+Actions
+Projects
+Wiki
+Security
+Insights
+wellsfargoFSD/hibernate/jpa-hibernate-demo-1/src/main/java/com/wellsfargo/jpahd/ui/EmployeeApp2.java /
+@avamsykiran
+avamsykiran hibernate examples updated
+Latest commit 2fe932a 5 days ago
+ History
+ 1 contributor
+42 lines (28 sloc)  963 Bytes
+  
+package com.wellsfargo.jpahd.ui;
+
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.wellsfargo.jpahd.entity.Employee;
+
+public class EmployeeApp2 {
+
+	public static void main(String[] args) {
+		
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("mysqlPU");
+		EntityManager em = emf.createEntityManager();
+		
+		Scanner kbScan = new Scanner(System.in);
+		
+		boolean shallContinue=true;
+
+		while(shallContinue) {
+		
+			System.out.println("Enter Employee Id: ");
+			long empId = kbScan.nextLong();
+			
+			Employee emp = em.find(Employee.class, empId);
+			if(emp!=null) {
+				System.out.println(emp.getFirstName() + " " + emp.getLastName());
+			}else {
+				System.out.println("Emp Not Found");
+			}
+			
+			System.out.println("Continue? (true/false): ");
+			shallContinue=kbScan.nextBoolean();
+		}
+		
+		em.close();
+		kbScan.close();
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.wellsfargo.fsd.service;
+
+import java.time.LocalTime;
+
+public class GreetingProviderImpl implements GreetingProvider{
+
+	public String getGreeting() {
+		String greeting = null;
+		
+		int h = LocalTime.now().getHour();
+		return greeting;
+	}
+
+}

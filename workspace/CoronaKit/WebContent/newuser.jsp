@@ -12,7 +12,7 @@
 
 	<h3>Please enter your information:</h3>
 
-	<form action="showproductstoadd" method="post">
+	<form action="newuser" method="post">
 		<table cellspacing="5px" cellpadding="5px">
 
 			<tr>

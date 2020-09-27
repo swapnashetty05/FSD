@@ -1,0 +1,29 @@
+package com.wellsfargo.fsd.lms.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class DefaultController {
+
+	@GetMapping({"","/","/home"})
+	public String getHome() {
+		return "index";
+	}
+	
+	@RequestMapping("/header")
+	public ModelAndView showHeader() {
+
+		ModelAndView mv = new ModelAndView("header");
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if (!(auth instanceof AnonymousAuthenticationToken) && auth.isAuthenticated()) {
+			String role = new ArrayList<>(auth.getAuthorities()).get(0).getAuthority();
+			
+			mv.addObject("unm", auth.getName());
+			mv.addObject("role", role);
+		}
+		return mv;
+		
+	}
+}

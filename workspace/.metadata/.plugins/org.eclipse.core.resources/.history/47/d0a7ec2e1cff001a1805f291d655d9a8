@@ -1,0 +1,11 @@
+package com.wellsfargo.fsd.lms.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.wellsfargo.fsd.lms.entity.LMSUser;
+
+public interface UserRepo extends JpaRepository<Users, Integer> {
+
+	Users findByUserName(String userName);
+	boolean existsByUserName(String userName);
+}

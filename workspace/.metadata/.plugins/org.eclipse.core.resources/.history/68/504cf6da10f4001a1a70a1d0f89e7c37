@@ -1,0 +1,28 @@
+package com.wellsfargo.fsd.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.wellsfargo.fsd.service.EmployeeServiceInt;
+
+@Controller
+public class EmployeeController {
+	
+	@Autowired
+	private EmployeeServiceInt empserv;
+
+	@GetMapping("/emp")
+	public String showEmpForm() {
+		return "emp-form-page";
+	}
+	
+	@PostMapping("/emp")
+	public ModelAndView acceptEmployeeDetails(@ModelAttribute Employee emp) {
+		
+	}
+}

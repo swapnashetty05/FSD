@@ -19,7 +19,7 @@
 		</p>
 	</c:if>
 	<h2>Please login If you are Admin</h2>
-	<form action="adminlistProduct" method="post">
+	<form action="login" method="post">
 		<div>
 			<div>
 				<label for="loginid">Enter login Id</label>
@@ -51,7 +51,7 @@
 	<div>
 		<h2>
 			Are you a new user who wants to order corona kit from us? Please
-			click here <a href="newuser"><button>Create Corona Kit</button></a>
+			click here <a href="newuser.jsp"><button>Create Corona Kit</button></a>
 		</h2>
 
 	</div>

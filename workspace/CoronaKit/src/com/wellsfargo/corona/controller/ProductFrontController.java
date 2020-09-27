@@ -79,6 +79,7 @@ public class ProductFrontController extends HttpServlet {
 			view = doCreateorSaveProduct(request, response);
 			break;
 		case "/logout":
+		
 			view = "index.jsp";
 			break;
 		case "/newuser":

@@ -1,0 +1,26 @@
+package com.wellsfargo.fsd.lms.controller;
+
+@Component
+public class AppStartUpEventHandler {
+
+	@Autowired
+	private LMSUserRepo repo;
+	
+	@Autowired
+	private PasswordEncoder penc;
+	
+	@EventListener
+	public void appReady(ApplicationReadyEvent event) {
+
+		LMSUser user = repo.findByUserName("admin");
+		
+		if(user==null) {
+			user = new LMSUser();
+			user.setUserName("admin");
+			user.setEncodedPassword(penc.encode("admin"));
+			user.setRole("ADMIN");
+			repo.save(user);
+		}
+	}
+
+}

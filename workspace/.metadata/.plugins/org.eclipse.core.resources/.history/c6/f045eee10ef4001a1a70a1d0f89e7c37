@@ -1,0 +1,13 @@
+package com.wellsfargo.fsd.service;
+
+import com.wellsfargo.fsd.model.Employee;
+
+public class EmployeeServiceIMPL implements EmployeeServiceInt {
+
+	@Override
+	public void computeAllowence(Employee emp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

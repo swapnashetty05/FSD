@@ -1,0 +1,7 @@
+package com.wellsfargo.fsd.service;
+
+public interface EmployeeServiceInt {
+
+	void computeAllowence(Employee emp);
+	
+}

@@ -1,0 +1,11 @@
+package com.wellsfargo.swapmvc.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class SwapController {
+
+	public String getPage() {
+		return "page";
+	}
+}

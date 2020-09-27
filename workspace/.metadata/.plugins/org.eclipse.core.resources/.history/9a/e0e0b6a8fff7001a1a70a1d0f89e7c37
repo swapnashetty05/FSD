@@ -1,0 +1,19 @@
+package com.wellsfargo.fsd.lms.controller;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.wellsfargo.fsd.lms.exception.LoanException;
+
+@RestControllerAdvice
+public class GlobalExceptionController {
+
+	@ExceptionHandler(LoanException.class)
+	public ResponseEntity<String> handleException(LoanException exp) {
+		return new ResponseEntity<String>(exp.getMessage(),HttpStatus.BAD_REQUEST));
+		
+	}
+}

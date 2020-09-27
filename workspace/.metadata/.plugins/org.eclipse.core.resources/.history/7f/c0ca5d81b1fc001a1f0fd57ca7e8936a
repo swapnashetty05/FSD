@@ -1,0 +1,9 @@
+package com.wellsfargo.fsd.lms.dao;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+@Repository
+public class LMSUserRepo extends JpaRepository<LMSUser, Integer> {
+
+}

@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Corona Kit-All Products(user)</title>
+</head>
+<body>
+<jsp:include page="header.jsp"/>
+<hr/>
+
+<form action="addProduct" method="post">
+		<div>
+			<label>ProductId</label>
+			<input type="number" name="pproductId" value="${product.pproductId}" required }/>
+		</div>	
+		<div>
+			<label>ProductName</label>
+			<input type="text" name="pproductName" value="${product.pproductName}" required />
+		</div>	
+		<div>
+			<label>Description</label>
+			<input type="text" name="pdescription" value="${product.pdescription}" required />
+		</div>	
+		<div>
+			<label>Cost</label>
+			<input type="decimal" name="pcost" value="${product.pcost}" required />
+		</div>	
+		<div>
+			<label>AvailabilityStatus</label>
+			<select name="pavailabilityStatus" required >
+				<option value="">--SELECT--</option>
+				<c:forEach items="${['AVAILABLE', 'SOLDOUT']}" var="opt">
+					<option value="${opt }" ${opt.equals(product.pavailabilityStatus?'selected':'') } >${opt }</option>
+				</c:forEach>				
+			</select>
+		</div>	
+		<button>SAVE</button>		
+	</form>
+
+<hr/>	
+	<jsp:include page="footer.jsp"/>
+</html>

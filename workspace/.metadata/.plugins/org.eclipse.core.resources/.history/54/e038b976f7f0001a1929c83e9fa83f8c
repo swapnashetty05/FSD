@@ -1,0 +1,13 @@
+package com.wellsfargo.fsd.service;
+
+public class GreetServiceEnhancedImpl implements GreetService {
+	
+	private GreetingProvider gp;
+
+	public String greet(String userName) {
+		
+		return gp.getGreeting() + " " + userName;
+	}
+	
+
+}

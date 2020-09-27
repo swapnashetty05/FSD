@@ -1,0 +1,17 @@
+package com.wellsfargo.swmd.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class DashboardController {
+
+	/*
+	 * http://localhost:9090/SpringWebMvcDemo1
+	 * http://localhost:9090/SpringWebMvcDemo1/
+	 * http://localhost:9090/SpringWebMvcDemo1/home
+	 */
+	@RequestMapping(value= {"","/","/home"},method=RequestMethod.GET)
+	public String getHome() {
+		return "home";
+	}
+}

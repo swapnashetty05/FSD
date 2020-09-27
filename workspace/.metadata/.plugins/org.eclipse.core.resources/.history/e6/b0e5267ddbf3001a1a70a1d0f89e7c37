@@ -1,0 +1,12 @@
+package com.wellsfargo.fsd.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class DashboardController {
+
+	@RequestMapping(value= {"","/","/home"},method = RequestMethod.GET)
+	public String homeAction() {
+		return "home";
+	}
+}

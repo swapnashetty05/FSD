@@ -1,0 +1,16 @@
+package com.wellsfargo.fsd.lms.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.wellsfargo.fsd.lms.service.LoanService;
+
+@RestController
+@RequestMapping("/loans")
+public class LoanRestController {
+
+	
+	@Autowired
+	private LoanService loanservice;
+}

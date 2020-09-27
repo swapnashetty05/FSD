@@ -1,0 +1,5 @@
+package com.wellsfargo.fsd.service;
+
+public class GreetingProviderImpl implements GreetingProvider{
+
+}

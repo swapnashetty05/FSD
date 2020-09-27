@@ -1,0 +1,60 @@
+package com.wellsfargo.fsd.coronakit.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.wellsfargo.fsd.coronakit.dao.ProductMasterRepository;
+import com.wellsfargo.fsd.coronakit.entity.Loan;
+import com.wellsfargo.fsd.coronakit.entity.ProductMaster;
+import com.wellsfargo.fsd.coronakit.exception.CoronaException;
+import com.wellsfargo.fsd.coronakit.exception.LoanException;
+
+
+@Service
+public class ProductServiceImpl implements ProductService {
+
+	@Autowired
+	ProductMasterRepository repository;
+	
+	
+	@Override
+	@Transactional
+	public ProductMaster addNewProduct(ProductMaster product) throws CoronaException {
+		if(product!=null) {
+			if(repository.existsById(product.getId())) {
+				throw new CoronaException("product Id already used!");
+			}
+			
+			repository.save(product);
+		}
+		return product;
+	}
+
+	@Override
+	public List<ProductMaster> getAllProducts() {
+		return repository.findAll();
+	}
+
+	
+
+	@Override
+	@Transactional
+	public boolean deleteProduct(int productId)  {
+		if(!repository.existsById(productId)) {
+			throw new LoanException("product Not Found");
+		}
+		
+		repository.deleteById(productId);
+		return true;
+	}
+	@Override
+	public ProductMaster getProductById(int productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

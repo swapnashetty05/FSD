@@ -1,0 +1,8 @@
+package com.wellsfargo.fsd.lms.controller;
+
+import org.springframework.web.bind.annotation.ControllerAdvice;
+
+@Controller
+public class DefaultController {
+
+}

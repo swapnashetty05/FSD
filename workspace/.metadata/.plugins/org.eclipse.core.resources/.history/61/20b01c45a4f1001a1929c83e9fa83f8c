@@ -1,0 +1,5 @@
+package com.wellsfargo.jpahd.entity;
+
+public class Manager {
+
+}

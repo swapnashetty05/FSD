@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Java Web One</title>
+</head>
+<body>
+	<h1>My First Java Web Home.</h1>
+	<nav>
+		<a href="greet">Greet Page</a>
+	</nav>
+
+	<form action="greet">
+		<label>UserName</label> 
+		<input type="text" name="unm"/>
+		<button>ok</button>
+
+	</form>
+	
+	<form action ="arth">
+	<label>Operand 1:
+	<input type = "number" name ="n1" required/></label>
+	
+	<label>Operand 2:
+	<input type = "number" name ="n2" required/></label>
+	<button name ="operation" value ="add">SUM</button>
+	<button name ="operation" value ="diff">Diff</button>
+	<button name ="operation" value ="mult">mult</button>
+	<button name ="operation" value ="divR">quotient</button>
+	<button name ="operation" value ="divM">Reminder</button>
+	</form>
+
+</body>
+</html>

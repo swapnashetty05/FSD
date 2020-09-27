@@ -1,0 +1,5 @@
+package com.wellsfargo.fsd.lms.entity;
+
+public interface LoanDAO {
+
+}

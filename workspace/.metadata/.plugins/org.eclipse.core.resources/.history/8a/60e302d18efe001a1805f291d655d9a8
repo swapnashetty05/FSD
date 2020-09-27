@@ -1,0 +1,39 @@
+package com.eval.coronakit.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name = "users")
+public class Users {
+
+	@Id
+	@GeneratedValue
+	private Integer userId;
+
+	@Column(name = "unm", unique = true)
+	private String userName;
+
+	@Transient
+	private String password;
+
+	@Column(name = "pwd")
+	private String encodedPassword;
+
+	@Column(name = "role")
+	private String role;
+	
+	@Column
+	private boolean enabled;
+	
+	@Column
+	private String email;
+	
+	@Column
+	private String contact;
+	
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="LoanRepoTest" project="spring-web-mvc-boot-web-data-test" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.wellsfargo.fsd.lms.test.LoanRepoTest" time="1.308" displayname="LoanRepoTest" uniqueid="[engine:junit-jupiter]/[class:com.wellsfargo.fsd.lms.test.LoanRepoTest]">
+    <testcase name="whenFindAllByStatus_givenExistingStatus_thenReturnListOfMAtchingLoans" classname="com.wellsfargo.fsd.lms.test.LoanRepoTest" time="1.308" displayname="whenFindAllByStatus_givenExistingStatus_thenReturnListOfMAtchingLoans()" uniqueid="[engine:junit-jupiter]/[class:com.wellsfargo.fsd.lms.test.LoanRepoTest]/[method:whenFindAllByStatus_givenExistingStatus_thenReturnListOfMAtchingLoans()]"/>
+  </testsuite>
+</testrun>

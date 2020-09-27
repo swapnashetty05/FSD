@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="gst" class="com.wellsfargo.fsd.service.GreetServiceImpl" />
+
+	<bean id="gsa"
+		class="com.wellsfargo.fsd.service.GreetServiceAdvancedImpl">
+		
+		<!-- This is setter injection -->
+		<!-- <property name="greeting" value="Namsathey! " /> -->
+		
+		<!-- This is constructor injection -->
+		<constructor-arg index="0" value="Namaskara! yella soukyana "/>
+	</bean>
+	
+	<bean id="gpb" class="com.wellsfargo.fsd.service.GreetingProviderImpl" />
+	
+	<bean id="gse"
+		class="com.wellsfargo.fsd.service.GreetServiceEnhancedImpl">
+		
+		<!-- This is setter injection -->
+		<!--  <property name="gp" ref="gsa"  /> -->
+		<constructor-arg index="0"  ref="gpb"/>
+		
+		</bean>
+</beans>

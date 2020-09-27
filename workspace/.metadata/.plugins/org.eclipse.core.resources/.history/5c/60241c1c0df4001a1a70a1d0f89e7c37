@@ -1,0 +1,11 @@
+package com.wellsfargo.fsd.service;
+
+public class GreetServiceIMPL implements GreetService {
+
+	@Override
+	public String doGreet(String userName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

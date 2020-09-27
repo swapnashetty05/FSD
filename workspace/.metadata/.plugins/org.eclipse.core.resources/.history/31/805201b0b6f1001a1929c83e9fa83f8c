@@ -1,0 +1,28 @@
+package com.wellsfargo.fsd.ui;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.wellsfargo.fsd.service.GreetService;
+
+
+public class GreetApp1 {
+
+	public static void main(String[] args) {
+		
+//		GreetServiceImpl gs = new GreetServiceImpl();
+//		System.out.println(gs.greet("swap"));
+
+		ApplicationContext context = new AnnotationConfigApplicationContext(AppConf.class);
+		
+		GreetService gs = (GreetService) context.getBean("gst");
+		System.out.println(gs.greet("swap"));
+		
+		GreetService gsa = (GreetService) context.getBean("gsa");
+		System.out.println(gsa.greet("swap"));
+		
+		GreetService gse = (GreetService) context.getBean("gse");
+		System.out.println(gse.greet("swap"));
+	}
+
+}

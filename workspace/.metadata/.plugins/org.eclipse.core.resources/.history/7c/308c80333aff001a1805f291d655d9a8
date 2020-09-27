@@ -1,0 +1,58 @@
+package com.wellsfargo.fsd.coronakit.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.wellsfargo.fsd.coronakit.dao.ProductMasterRepository;
+import com.wellsfargo.fsd.coronakit.entity.Loan;
+import com.wellsfargo.fsd.coronakit.entity.ProductMaster;
+import com.wellsfargo.fsd.coronakit.exception.LoanException;
+
+
+@Service
+public class ProductServiceImpl implements ProductService {
+
+	@Autowired
+	ProductMasterRepository repository;
+	
+	@Override
+	public ProductMaster addNewProduct(ProductMaster product) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	@Transactional
+	public ProductMaster adaddNewProductd(ProductMaster product) throws ProductException {
+		if(loan!=null) {
+			if(loanRepo.existsById(loan.getLoanId())) {
+				throw new LoanException("Loan Id already used!");
+			}
+			
+			loanRepo.save(loan);
+		}
+		return loan;
+	}
+
+	@Override
+	public List<ProductMaster> getAllProducts() {
+		return repository.findAll();
+	}
+
+	@Override
+	public ProductMaster deleteProduct(int productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ProductMaster getProductById(int productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,41 @@
+package com.wellsfargo.fsd.controller;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.wellsfargo.fsd.model.Employee;
+import com.wellsfargo.fsd.service.EmployeeServiceInt;
+
+@Controller
+public class EmployeeController {
+	
+	@Autowired
+	private EmployeeServiceInt empserv;
+
+	@GetMapping("/emp")
+	/*
+	public String showEmpForm() {
+		return "emp-form-page";
+	}
+	*/
+	public ModelAndView showEmpForm() {
+		return new ModelAndView("emp-form-page","emp",new Employee());
+	}
+	
+	public List<String> getDesignations(){
+		return Arrays.asList(new String[] {"SE","SSE","PM","DM"});
+	}
+	
+	@PostMapping("/emp")
+	public ModelAndView acceptEmployeeDetails(@ModelAttribute Employee emp) {
+		empserv.computeAllowence(emp);
+		return new ModelAndView("emp-output-page","emp",emp);
+	}
+}

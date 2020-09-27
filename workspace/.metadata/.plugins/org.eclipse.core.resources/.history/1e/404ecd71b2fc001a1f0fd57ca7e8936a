@@ -1,0 +1,5 @@
+package com.wellsfargo.fsd.lms.conf;
+
+public class SecurityConfiguaration {
+
+}

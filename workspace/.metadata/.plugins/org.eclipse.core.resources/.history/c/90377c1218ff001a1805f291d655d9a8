@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SPS Corona Kit Application</title>
+
+<body>
+	<jsp:include page="/header" />
+	<nav>
+
+		<form action="${pageContext.request.contextPath}/validate" method="POST">
+		<!-- 
+			<c:if test="${param.error ne null}">
+				Invalid Credentials! Access Denied!
+			</c:if>
+			 -->
+			<!--  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
+			<label>UserName: <input type="text" name="unm"/></label>
+			<label>Password: <input type="password" name="pwd"/></label>
+			<button>Sign In</button>
+		</form>
+	</nav>
+<jsp:include page="/footer" />
+
+</body>
+</html>

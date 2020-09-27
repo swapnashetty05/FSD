@@ -1,0 +1,5 @@
+package com.wellsfargo.fsd.conf;
+
+public class AppConf {
+
+}

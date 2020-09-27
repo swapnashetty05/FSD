@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Corona Kit-All Products(user)</title>
+</head>
+<body>
+<jsp:include page="header.jsp"/>
+<hr/>
+
+<c:choose>
+		<c:when test="${products == null || products.isEmpty() }">
+			<p>no products available</p>
+		</c:when>
+
+		<c:otherwise>
+			<table border="1" cellspacing="5px" cellpadding="5px">
+				<tr>
+					<th>ProductId</th>
+					<th>ProductName</th>
+					<th>Description</th>
+					<th>Cost</th>
+					<th>AvailabilityStatus</th>
+				</tr>
+				<c:forEach items="${products}" var="product">
+					<tr>
+						<td>${product.pproductId}</td>
+						<td>${product.pproductName}</td>
+						<td>${product.pdescription}</td>
+						<td>${product.pcost}</td>
+						<td>${product.pavailabilityStatus}</td>
+						<td><a href="deleteProduct?cid=${product.pproductId}">DELETE</a>
+							<span>|</span> <a href="editProduct?cid=${product.pproductId}">EDIT</a>
+
+						</td>
+					</tr>
+
+					
+				</c:forEach>
+			</table>
+			<table border="1" align="center" background-color: #f1f1c1>
+					<tr>
+						<td><a href="newProduct">ADD
+								PRODUCT</a></td>
+					</tr>
+					</table>
+		</c:otherwise>
+	</c:choose>
+
+<hr/>	
+	<jsp:include page="footer.jsp"/>
+</html>

@@ -1,0 +1,9 @@
+package com.wellsfargo.fsd.lms.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.wellsfargo.fsd.lms.entity.LMSUser;
+
+public interface LMSUserRepo extends JpaRepository<LMSUser, Integer> {
+
+}

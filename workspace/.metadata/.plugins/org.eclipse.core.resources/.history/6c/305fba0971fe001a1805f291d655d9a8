@@ -1,0 +1,13 @@
+package com.eval.coronakit;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class CoronakitSpringFinalApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CoronakitSpringFinalApplication.class, args);
+	}
+
+}

@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<title>Employee Output Page</title>
+		<link rel="stylesheet" href="css/site.css" />
+	</head>
+	<body>
+		<jsp:include page="/header" />
+		<section>
+		<h3>Employee Details</h3>
+		
+		<table>
+		<tr><td><strong>EmpID</strong></td><td>${emp.empID}</td> </tr>
+		</table>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+package com.wellsfargo.fsd.conf;
+
+import java.time.LocalDateTime;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan("com.wellsfargo.fsd.service")
+public class AppConf {
+
+	public localDateTime today() {
+		return LocalDateTime.now();
+	}
+	
+}

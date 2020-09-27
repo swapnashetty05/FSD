@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Employee Page</title>
+		<link rel="stylesheet" href="css/site.css" />
+	</head>
+	<body>
+		<jsp:include page="/header" />
+		<h3>Employee Form</h3>
+		<form method="post">
+		<div>
+		<label>Employee ID: </label>
+		<input type="number" name ="empID">
+		<button>OK</button>
+		</div>
+		</form>
+		<p><strong>${msg }</strong></p>
+	</body>
+</html>

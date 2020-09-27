@@ -1,0 +1,12 @@
+<html>
+	<head>
+		<title>Home</title>
+		<link rel="stylesheet" href="css/site.css" />
+	</head>
+	<body>
+		<jsp:include page="/header" />
+		<form>
+		
+		</form>
+	</body>
+</html>

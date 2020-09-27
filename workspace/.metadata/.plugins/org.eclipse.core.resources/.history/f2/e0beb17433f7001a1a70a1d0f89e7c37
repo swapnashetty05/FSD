@@ -1,0 +1,20 @@
+package com.wellsfargo.fsd.lms.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.wellsfargo.fsd.lms.entity.Loan;
+
+
+@Repository
+public interface LoanDao extends JpaRepository<Loan, Integer>{
+
+	Loan add(Loan loan) throws LoanException;
+	Loan save(Loan loan) throws LoanException;
+	boolean deleteById(int loandId) throws LoanException;
+	
+	List<Loan> getAll() throws LoanException;
+	Loan getById(int loanId) throws LoanException;
+}

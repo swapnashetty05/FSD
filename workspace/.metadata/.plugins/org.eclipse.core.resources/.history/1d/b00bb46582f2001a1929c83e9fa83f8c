@@ -1,0 +1,7 @@
+package com.wellsfargo.swapmvc;
+
+import org.springframework.web.WebApplicationInitializer;
+
+public class webconf implements WebApplicationInitializer {
+
+}

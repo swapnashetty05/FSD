@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="LoanServiceTest" project="spring-web-mvc-boot-web-data-test" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.wellsfargo.fsd.lms.test.LoanServiceTest" time="0.107" displayname="LoanServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.wellsfargo.fsd.lms.test.LoanServiceTest]">
+    <testcase name="whenAdd_givenExistingRecord_thenThrowLoanException" classname="com.wellsfargo.fsd.lms.test.LoanServiceTest" time="0.083" displayname="whenAdd_givenExistingRecord_thenThrowLoanException()" uniqueid="[engine:junit-jupiter]/[class:com.wellsfargo.fsd.lms.test.LoanServiceTest]/[method:whenAdd_givenExistingRecord_thenThrowLoanException()]"/>
+    <testcase name="whenAdd_givenNonExistingRecord_thenReturnThatRecord" classname="com.wellsfargo.fsd.lms.test.LoanServiceTest" time="0.024" displayname="whenAdd_givenNonExistingRecord_thenReturnThatRecord()" uniqueid="[engine:junit-jupiter]/[class:com.wellsfargo.fsd.lms.test.LoanServiceTest]/[method:whenAdd_givenNonExistingRecord_thenReturnThatRecord()]"/>
+  </testsuite>
+</testrun>

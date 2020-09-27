@@ -1,0 +1,14 @@
+package com.wellsfargo.fsd.ui;
+
+import com.wellsfargo.fsd.service.GreetServiceImpl;
+
+public class GreetApp1 {
+
+	public static void main(String[] args) {
+		
+		GreetServiceImpl gs = new GreetServiceImpl();
+		System.out.println(gs.greet("swap"));
+
+	}
+
+}

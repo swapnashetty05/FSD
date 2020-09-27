@@ -1,0 +1,5 @@
+package com.wellsfargo.fsd.lms.dao;
+
+public class LMSUserRepo extends JpaRepository<IMSUser, Integer> {
+
+}

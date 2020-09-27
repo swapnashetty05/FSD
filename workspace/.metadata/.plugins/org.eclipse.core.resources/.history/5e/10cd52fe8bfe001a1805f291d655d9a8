@@ -1,0 +1,43 @@
+package com.eval.coronakit.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+
+@Entity
+//@Table(name = "authorities",uniqueConstraints = @UniqueConstraint(columnNames = {"username_role", "authority"}))
+//@Table(name = "authorities") // ,uniqueConstraints = @UniqueConstraint(columnNames = {"username", "authority"}))
+@Table(name = "authorities")
+public class Roles {
+	
+
+	@Id
+	@Column(name = "username_role",unique = true)
+	private String userName;
+	
+	@Id
+	@Column(name = "authority")
+	private String role;
+	
+	
+	public String getUserName() {
+		return userName;
+	}
+	public void setUsername(String userName) {
+		this.userName = userName;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
+	
+}

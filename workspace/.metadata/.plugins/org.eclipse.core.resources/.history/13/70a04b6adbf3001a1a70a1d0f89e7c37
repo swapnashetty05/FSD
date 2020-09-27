@@ -1,0 +1,5 @@
+package com.wellsfargo.fsd.controller;
+
+public class DashboardController {
+
+}

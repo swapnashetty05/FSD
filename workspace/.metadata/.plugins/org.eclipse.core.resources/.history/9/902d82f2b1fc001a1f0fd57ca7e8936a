@@ -1,0 +1,5 @@
+package com.wellsfargo.fsd.lms.service;
+
+public class UserDetailsServiceImpl {
+
+}
