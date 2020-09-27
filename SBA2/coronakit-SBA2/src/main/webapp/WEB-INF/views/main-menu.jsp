@@ -40,7 +40,7 @@
 				<c:when test="${unm!=null && role=='ADMIN' }">
 					<ul class="navbar-nav">
 						<li class="nav-item"><a class="nav-link"
-							href="${pageContext.request.contextPath }/admin/home">ADMIN
+							href="${pageContext.request.contextPath }/admin/home">
 								DASHBOARD</a></li>
 					</ul>
 				</c:when>
@@ -48,7 +48,7 @@
 				<c:when test="${unm!=null && role=='USER' }">
 					<ul class="navbar-nav">
 						<li class="nav-item"><a class="nav-link"
-							href="${pageContext.request.contextPath }/user/home">USER
+							href="${pageContext.request.contextPath }/user/home">
 								DASHBOARD</a></li>
 					</ul>
 				</c:when>
@@ -57,8 +57,10 @@
 			</c:choose>
 		</div>
 	</nav>
-	<p class="font-weight-bold text-info" style="float:center;"><h5>Welcome to Corona-Kit Dashboard</h5></p>
-	  
-<div class="fixed-bottom bg-light"><jsp:include page="/footer" /></div>
+	<p class="font-weight-bold text-info" style="float: center;">
+	<h5>Welcome to Corona-Kit Dashboard</h5>
+	</p>
+
+	<div class="fixed-bottom bg-light"><jsp:include page="/footer" /></div>
 </body>
 </html>

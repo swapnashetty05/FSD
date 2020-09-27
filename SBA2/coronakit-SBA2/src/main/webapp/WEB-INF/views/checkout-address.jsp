@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-   <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> 
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,47 +25,48 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-<jsp:include page="/header" />
-<div>
-</div>
-<nav class="navbar navbar-expand-md bg-light navbar-light">
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
- <div class="collapse navbar-collapse" id="collapsibleNavbar">
- 	<ul class="navbar-nav">
- 		<li class="nav-item">
-	        <a class="nav-link" href="${pageContext.request.contextPath }/user/home">Dashboard</a>
-	      </li> 
-		<li class="nav-item">
-	        <a class="nav-link" href="${pageContext.request.contextPath }/user/show-list">Products</a>
-	     </li>	 
-	     <li class="nav-item">
-	        <a class="nav-link" href="${pageContext.request.contextPath }/user/show-cart">Kit Details</a>
-	     </li>    
-	 </ul> 
-	 </div>
-	 </nav>
- 
- <div class="alert bg-light" style="margin:10px;">
+	<jsp:include page="/header" />
+	<div></div>
+	<nav class="navbar navbar-expand-md bg-light navbar-light">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath }/user/home">Dashboard</a>
+				</li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath }/user/show-list">Products</a>
+				</li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath }/user/show-cart">Kit
+						Details</a></li>
+			</ul>
+		</div>
+	</nav>
 
-    
-	<form:form action="${pageContext.request.contextPath }/user/finalize" method="post" modelAttribute="ShippingAddress">
-		
-		<div class="form-group">  
-            <form:label path="Address">Enter Shipping Address :</form:label>  
-            <form:textarea  path="Address" class="form-control"/>    
-            <form:errors path="Address" class="alert alert-warning"/> 
-                 
-        </div>
-		
-        
-        <div class="form-group"> 
-        <button class="btn pull-right btn-danger">Place Order</button>
-        </div>
-</form:form>
-</div>
+	<div class="alert bg-light" style="margin: 10px;">
 
-<jsp:include page="/footer" />
+
+		<form:form action="${pageContext.request.contextPath }/user/finalize"
+			method="post" modelAttribute="ShippingAddress">
+
+			<div class="form-group">
+				<form:label path="Address">Enter Shipping Address :</form:label>
+				<form:textarea path="Address" class="form-control" />
+				<form:errors path="Address" class="alert alert-warning" />
+
+			</div>
+
+
+			<div class="form-group">
+				<button class="btn pull-right btn-danger">Place Order</button>
+			</div>
+		</form:form>
+	</div>
+
+	<jsp:include page="/footer" />
 </body>
 </html>

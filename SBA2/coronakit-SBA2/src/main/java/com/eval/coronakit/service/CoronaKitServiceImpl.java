@@ -13,19 +13,14 @@ public class CoronaKitServiceImpl implements CoronaKitService {
 	CoronaKitRepository repository;
 	
 	@Override
-	public CoronaKit saveKit(CoronaKit kit) {
-		// TODO Auto-generated method stub
-		if (kit!=null)
+	public CoronaKit saveKit(CoronaKit coronaKit) {
+		
+		if (coronaKit!=null)
 		{
-			repository.save(kit);
+			repository.save(coronaKit);
 		}
-		return kit;
+		return coronaKit;
 	}
 
-	@Override
-	public CoronaKit getKitById(int kitId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

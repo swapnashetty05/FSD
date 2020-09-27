@@ -11,64 +11,56 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Coronakitdetails") 
+@Table(name = "Coronakitdetails")
 public class CoronaKit {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	/*
-	@Embedded
-	private UserAddress deliveryAddress;
-	
-	public UserAddress getDeliveryAddress() {
-		return deliveryAddress;
-	}
-	public void setDeliveryAddress(UserAddress deliveryAddress) {
-		this.deliveryAddress = deliveryAddress;
-	}
-	*/
-	@Column(name="deliveryAddress")
+	@Column(name = "deliveryAddress")
 	private ShippingAddress deliveryAddress;
-	
-	@Column(name="OrderDate")
+
+	@Column(name = "OrderDate")
 	private LocalDate orderDate;
-	@Column(name="TotalAmount")
+
+	@Column(name = "TotalAmount")
 	private int totalAmount;
+
 	public CoronaKit() {
-		// TODO Auto-generated constructor stub
+
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
 
-	
-	
 	public ShippingAddress getDeliveryAddress() {
 		return deliveryAddress;
 	}
+
 	public void setDeliveryAddress(ShippingAddress deliveryAddress) {
 		this.deliveryAddress = deliveryAddress;
 	}
+
 	public LocalDate getOrderDate() {
 		return orderDate;
 	}
+
 	public void setOrderDate(LocalDate orderDate) {
 		this.orderDate = orderDate;
 	}
+
 	public int getTotalAmount() {
 		return totalAmount;
 	}
+
 	public void setTotalAmount(int totalAmount) {
 		this.totalAmount = totalAmount;
 	}
-
-	
-
-
 
 }

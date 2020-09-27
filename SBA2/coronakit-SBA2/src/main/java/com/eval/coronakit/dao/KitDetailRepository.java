@@ -13,7 +13,7 @@ public interface KitDetailRepository extends JpaRepository<KitDetail, Integer>{
 	
 	boolean existsByCoronaKitId(int coronaKitId);
 	
-	@Query("SELECt k FROM KitDetail k WHERE k.coronaKitId=:coronaKitId")
+	@Query("SELECT k FROM KitDetail k WHERE k.coronaKitId=:coronaKitId")
 	List<KitDetail> findAllCoronaKitId(int coronaKitId);
 
 }

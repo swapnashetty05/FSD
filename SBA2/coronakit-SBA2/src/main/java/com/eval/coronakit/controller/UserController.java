@@ -97,14 +97,13 @@ public class UserController {
 			quantityMap.put(prod.getId(), quantityMap.get(prod.getId()) + 1);
 		} else {
 			quantityMap.put(prod.getId(), 1);
-			
+
 		}
 		session.setAttribute("TotalQuantity", quantityMap);
 
 		model.addAttribute("productlist", productService.getAllProducts());
 		return "show-all-item-user";
 	}
-
 
 	@RequestMapping("/checkout")
 	public String Checkout(HttpSession session, Model model) throws ProductException {
@@ -118,16 +117,15 @@ public class UserController {
 			BindingResult rs, Model model, HttpSession session) throws ProductException {
 		String view = null;
 		if (!rs.hasErrors()) {
-			KitDetail k;
+			KitDetail kitD;
 			int Totalamount = 0;
 			List<ProductMaster> Addedproductstocart = (List<ProductMaster>) session.getAttribute("productAddedToCart");
 			Map<Integer, Integer> quantityMap = (Map<Integer, Integer>) session.getAttribute("TotalQuantity");
-			for (ProductMaster p : Addedproductstocart) {
-				Totalamount = Totalamount + (quantityMap.get(p.getId()) * p.getCost());
+			for (ProductMaster prod : Addedproductstocart) {
+				Totalamount = Totalamount + (quantityMap.get(prod.getId()) * prod.getCost());
 			}
 
 			model.addAttribute("Address", shippingAddress.getAddress());
-	
 
 			CoronaKit kit = new CoronaKit();
 
@@ -135,12 +133,12 @@ public class UserController {
 			kit.setOrderDate(LocalDate.now());
 			kit.setTotalAmount(Totalamount);
 			coronaKitService.saveKit(kit);
-			System.out.println(kit.getId());
+			
 			for (ProductMaster productT : Addedproductstocart) {
 
-				k = new KitDetail(kit.getId(), productT.getId(), productT.getProductName(), quantityMap.get(productT.getId()),
-						(quantityMap.get(productT.getId()) * productT.getCost()));
-				kitDetailService.addKitItem(k);
+				kitD = new KitDetail(kit.getId(), productT.getId(), productT.getProductName(),
+						quantityMap.get(productT.getId()), (quantityMap.get(productT.getId()) * productT.getCost()));
+				kitDetailService.addKitItem(kitD);
 			}
 			List<KitDetail> details = kitDetailService.getAllKitItemsOfAKit(kit.getId());
 			model.addAttribute("kitdetails", details);
@@ -154,20 +152,20 @@ public class UserController {
 	}
 
 	@RequestMapping("/delete")
-	public String deleteItem(@RequestParam("productId") int itemId, HttpSession session, Model model) {
+	public String deleteItem(@RequestParam("productId") int productId, HttpSession session, Model model) {
 		List<ProductMaster> Addedproductstocart = (List<ProductMaster>) session.getAttribute("productAddedToCart");
-		List<ProductMaster> RefreshproductAddedToCarts = new ArrayList<ProductMaster>();
+		List<ProductMaster> finalProductAdded = new ArrayList<ProductMaster>();
 		Map<Integer, Integer> quantityMap = (Map<Integer, Integer>) session.getAttribute("TotalQuantity");
 
-		for (ProductMaster p : Addedproductstocart) {
-			if (p.getId() == itemId) {
-				quantityMap.remove(itemId);
+		for (ProductMaster prod : Addedproductstocart) {
+			if (prod.getId() == productId) {
+				quantityMap.remove(productId);
 			} else {
-				RefreshproductAddedToCarts.add(p);
+				finalProductAdded.add(prod);
 			}
 		}
 		session.setAttribute("TotalQuantity", quantityMap);
-		session.setAttribute("productAddedToCart", RefreshproductAddedToCarts);
+		session.setAttribute("productAddedToCart", finalProductAdded);
 
 		return "show-cart";
 	}

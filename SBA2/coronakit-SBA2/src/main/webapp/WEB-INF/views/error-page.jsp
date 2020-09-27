@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,9 +23,9 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-<jsp:include page="/header" />
-<h1 class="jumbotron">Un-Authorized Access...</h1>
-<a href="${pageContext.request.contextPath}/">HOME</a>
-<jsp:include page="/footer" />
+	<jsp:include page="/header" />
+	<h1 class="jumbotron">Un-Authorized Access.</h1>
+	<a href="${pageContext.request.contextPath}/">HOME</a>
+	<jsp:include page="/footer" />
 </body>
 </html>

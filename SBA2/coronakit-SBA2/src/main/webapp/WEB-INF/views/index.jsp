@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,15 +23,16 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-<jsp:include page="/header" />
-<div class="alert bg-light" style="margin:10px;">
-	<p class="font-weight-bold text-info" style="float:center;"><h5>Welcome to Corona-Kit Page</h5></p>
+	<jsp:include page="/header" />
+	<div class="alert bg-light" style="margin: 10px;">
+		<p class="font-weight-bold text-info" style="float: center;">
+		<h5>Welcome to Corona-Kit Page</h5>
+		</p>
 
+		<a class="btn btn-sm btn-info"
+			href="${pageContext.request.contextPath}/custom-login">Login</a>
+	</div>
 
-
-	        <a class="btn btn-sm btn-info" href="${pageContext.request.contextPath}/custom-login">Login</a>
-	     </div>
-
-<jsp:include page="/footer" />
+	<jsp:include page="/footer" />
 </body>
 </html>

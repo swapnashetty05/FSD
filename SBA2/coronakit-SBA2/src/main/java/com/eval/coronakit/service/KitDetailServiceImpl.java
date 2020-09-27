@@ -13,34 +13,26 @@ import com.eval.coronakit.exception.ProductException;
 public class KitDetailServiceImpl implements KitDetailService {
 
 	@Autowired
-	KitDetailRepository repository;
-	
+	KitDetailRepository kitDetailRepository;
+
 	@Override
-	public KitDetail addKitItem(KitDetail kitItem) throws ProductException {
-		// TODO Auto-generated method stub
-		if (kitItem!=null)			
-		{
-//			if (repository.existsByCoronaKitId(kitItem.getCoronaKitId()))
-//			{
-//				throw new ProductException("CoronaKit id already exists");
-//			}
-			repository.save(kitItem);
+	public KitDetail addKitItem(KitDetail kitDetail) throws ProductException {
+
+		if (kitDetail != null) {
+			kitDetailRepository.save(kitDetail);
 		}
-		return kitItem;
+		return kitDetail;
 	}
 
 	@Override
-	public KitDetail getKitItemById(int itemId) {
-		// TODO Auto-generated method stub
-		return repository.findById(itemId).orElse(null);
+	public KitDetail getKitItemById(int id) {
+		return kitDetailRepository.findById(id).orElse(null);
 	}
 
 	@Override
 	public List<KitDetail> getAllKitItemsOfAKit(int kitId) {
-		return repository.findAllCoronaKitId(kitId);
-		// TODO Auto-generated method stub
-		//return repository.findAll();
-		
+		return kitDetailRepository.findAllCoronaKitId(kitId);
+
 	}
 
 }

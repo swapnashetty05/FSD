@@ -10,13 +10,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import com.eval.coronakit.entity.Users;
-import com.eval.coronakit.service.UserService;
+import com.eval.coronakit.service.UserDetailsServiceImpl;
+
 
 @Controller
 public class HomeController {
 
 	@Autowired
-	private UserService userService;
+	private UserDetailsServiceImpl userDetailsServiceImpl;
 
 	@RequestMapping("/")
 	public String index() {
@@ -34,7 +35,7 @@ public class HomeController {
 			mv.addObject("role", role);
 
 			//Adding user information
-			Users user = userService.getUserDetails(auth.getName());
+			Users user = userDetailsServiceImpl.getUserDetails(auth.getName());
 			session.setAttribute("username", user.getUsername());
 			System.out.println("user name fetched :" + user.getUsername());
 			session.setAttribute("email", user.getEmail());

@@ -34,14 +34,14 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath }/admin/home">ADMIN
+					href="${pageContext.request.contextPath }/admin/home">
 						DASHBOARD</a></li>
 						<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath }/admin/product-entry">Add
 						Product</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath }/admin/product-list">Products
-						List</a></li>
+						</a></li>
 			</ul>
 		</div>
 	</nav>

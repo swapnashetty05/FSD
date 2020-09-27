@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"  
-pageEncoding="ISO-8859-1"%>  
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>  
-<!DOCTYPE html>  
-<html>  
-<head>  
-<meta charset="ISO-8859-1">  
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
 <title>Error Page</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -22,16 +22,16 @@ pageEncoding="ISO-8859-1"%>
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 	crossorigin="anonymous"></script>
-</head>  
-<body>  
-<jsp:include page="/header" />
-     <div class="alert alert-danger"> 
-    <h3><strong>Error:</strong> ${errMsg }</h3>  
-    </div>
-    <p>  
-        Sorry for the inconvenience!  
-        Contact Technology team if problem persists!  
-    </p>  
-    <jsp:include page="/footer" />
-</body>  
+</head>
+<body>
+	<jsp:include page="/header" />
+	<div class="alert alert-danger">
+		<h3>
+			<strong>Error:</strong> ${errMsg }
+		</h3>
+	</div>
+	<p>Sorry for the inconvenience! Contact Technology team if problem
+		persists!</p>
+	<jsp:include page="/footer" />
+</body>
 </html>

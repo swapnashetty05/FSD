@@ -17,32 +17,34 @@ public class ProductMaster {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@NotNull(message = "Product Name cannot be a null value")
-	@Size(min = 2, message = "Product Name should be min of 2 characters")
+	@NotNull(message = "ProductName cannot be a null")
+	@Size(min = 2, message = "ProductName should be min 2 characters")
 	private String productName;
-	
-	@NotNull(message = "Product cost cannot be a null value")
-	@Min(value = 10, message = "Product Cost must be more than or equals to 10")
+
+	@NotNull(message = "Product cost cannot be null")
+	@Min(value = 10, message = "Cost must be more than or equal to 10")
 	private Integer cost;
 
-	@NotNull(message = "Product Description cannot be a null value")
-	@Size(min = 5, message = "Product Description should be min of 5 characters")
+	@NotNull(message = "Product Description cannot be a null")
+	@Size(min = 5, message = "Product Description should be min 5 characters")
 	private String productDescription;
 
 	public ProductMaster() {
 
 	}
 
+	
 	public ProductMaster(int id,
-			@NotNull(message = "Product Name cannot be a null value") @Size(min = 2, message = "Product Name should be min of 2 characters") String productName,
-			@NotNull(message = "Product cost cannot be a null value") @Min(value = 10, message = "Product Cost must be more than or equals to 10") Integer cost,
-			@NotNull(message = "Product Description cannot be a null value") @Size(min = 5, message = "Product Description should be min of 5 characters") String productDescription) {
+			@NotNull(message = "ProductName cannot be a null") @Size(min = 2, message = "ProductName should be min 2 characters") String productName,
+			@NotNull(message = "Product cost cannot be null") @Min(value = 10, message = "Cost must be more than or equal to 10") Integer cost,
+			@NotNull(message = "Product Description cannot be a null") @Size(min = 5, message = "Product Description should be min 5 characters") String productDescription) {
 		super();
 		this.id = id;
 		this.productName = productName;
 		this.cost = cost;
 		this.productDescription = productDescription;
 	}
+
 
 	public int getId() {
 		return id;
