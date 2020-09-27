@@ -24,40 +24,27 @@
 </head>
 <body>
 	<jsp:include page="/header" />
-	<h1 class="jumbotron">Welcome to Admin Dashboard</h1>
-	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	
+	<nav class="navbar navbar-expand-md bg-light navbar-light">
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
-				<!-- 
-				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath }/admin/home">ADMIN
-						DASHBOARD</a></li>
-						 -->
+				
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath }/admin/product-list">Products
 						List</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath }/admin/product-entry">Add
 						Product</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath }/logout">Sign Out</a></li>
 			</ul>
 		</div>
-	</nav>
+	</nav>	<p class="font-weight-bold text-info" style="float:center;"><h5>Welcome to Admin Dashboard</h5></p>
 	  
-	<c:if test="${msg != null }">
-		<div class="container-fluid">
-			<div class="alert alert-success">
-				<Strong>${msg }</Strong>
-			</div>
-		</div>
-		<br />
-	</c:if>
+	
 
-	<jsp:include page="/footer" />
+<jsp:include page="/footer" />
 </body>
 </html>

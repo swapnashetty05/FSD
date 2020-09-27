@@ -24,21 +24,13 @@
 </head>
 <body>
 <jsp:include page="/header" />
-<h1 class="jumbotron">Welcome to Corona-Kit Page</h1>
+<div class="alert bg-light" style="margin:10px;">
+	<p class="font-weight-bold text-info" style="float:center;"><h5>Welcome to Corona-Kit Page</h5></p>
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
- <div class="collapse navbar-collapse" id="collapsibleNavbar">
-	<ul class="navbar-nav">
- 		<li class="nav-item">
-	        <a class="nav-link" href="${pageContext.request.contextPath}/custom-login">Login</a>
-	      </li> 		
-	 </ul> 
-</div>
-</nav>
+
+	        <a class="btn btn-sm btn-info" href="${pageContext.request.contextPath}/custom-login">Login</a>
+	     </div>
 
 <jsp:include page="/footer" />
 </body>

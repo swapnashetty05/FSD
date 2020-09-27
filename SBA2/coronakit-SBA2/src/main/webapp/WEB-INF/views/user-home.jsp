@@ -26,8 +26,8 @@
 </head>
 <body>
 <jsp:include page="/header" />
-<h1 class="jumbotron">Welcome to User Dashboard</h1>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+
+<nav class="navbar navbar-expand-md bg-light navbar-light">
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -35,17 +35,15 @@
  	<ul class="navbar-nav">
  		
 		<li class="nav-item">
-	        <a class="nav-link" href="${pageContext.request.contextPath }/user/show-list">Products List</a>
+	        <a class="nav-link" href="${pageContext.request.contextPath }/user/show-list">Products</a>
 	     </li>
 	     <li class="nav-item">
-	        <a class="nav-link" href="${pageContext.request.contextPath }/user/show-list">Show Kit Details</a>
-	     </li>
-	     <li class="nav-item">
-	      	  <a class="nav-link" href="${pageContext.request.contextPath }/logout">Sign Out</a>
-	      	</li>	     
+	        <a class="nav-link" href="${pageContext.request.contextPath }/user/show-cart">Kit Details</a>
+	     </li>	     
 	 </ul> 
 	 </div>
 	 </nav>
-<jsp:include page="/footer" />
+	<p class="font-weight-bold text-info" style="margin:20px;" ><h5>Welcome to User Dashboard</h5></p>
+<div class="fixed-bottom bg-light"><jsp:include page="/footer" /></div>
 </body>
 </html>

@@ -28,64 +28,44 @@
 <jsp:include page="/header" />
 <div>
 </div>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<nav class="navbar navbar-expand-md bg-light navbar-light">
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
  <div class="collapse navbar-collapse" id="collapsibleNavbar">
  	<ul class="navbar-nav">
  		<li class="nav-item">
-	        <a class="nav-link" href="${pageContext.request.contextPath }/user/home">USER DASHBOARD</a>
+	        <a class="nav-link" href="${pageContext.request.contextPath }/user/home">Dashboard</a>
 	      </li> 
 		<li class="nav-item">
-	        <a class="nav-link" href="${pageContext.request.contextPath }/user/show-list">Products List To Add</a>
-	     </li>
+	        <a class="nav-link" href="${pageContext.request.contextPath }/user/show-list">Products</a>
+	     </li>	 
 	     <li class="nav-item">
-	      	  <a class="nav-link" href="${pageContext.request.contextPath }/logout">Sign Out</a>
-	      	</li>	     
+	        <a class="nav-link" href="${pageContext.request.contextPath }/user/show-cart">Kit Details</a>
+	     </li>    
 	 </ul> 
 	 </div>
 	 </nav>
+ 
+ <div class="alert bg-light" style="margin:10px;">
 
- <h3 class="jumbotron">Enter Shipping Address</h3>
-		<hr/>
- <section class="container-fluid p-4">
- <div class="col-sm-4"> 
     
-	<form:form action="${pageContext.request.contextPath }/user/finalize" method="post" modelAttribute="Address">
-		
+	<form:form action="${pageContext.request.contextPath }/user/finalize" method="post" modelAttribute="ShippingAddress">
 		
 		<div class="form-group">  
-            <form:label path="Address1">Address Line1 :</form:label>  
-            <form:input type="text" path="Address1" class="form-control"/>    
-            <form:errors path="Address1" class="alert alert-warning"/> 
+            <form:label path="Address">Enter Shipping Address :</form:label>  
+            <form:textarea  path="Address" class="form-control"/>    
+            <form:errors path="Address" class="alert alert-warning"/> 
                  
-        </div>  
-        
-        <div class="form-group">  
-            <form:label path="Address2">Address Line2 :</form:label>  
-            <form:input type="text" path="Address2" class="form-control"/>
-            <form:errors path="Address2" class="alert alert-warning"/>   
         </div>
-       
-        <div class="form-group">  
-            <form:label path="City">City :</form:label>  
-            <form:input type="text" path="City" class="form-control"/> 
-            <form:errors path="City" class="alert alert-warning"/>  
-        </div>
-        
-        <div class="form-group">  
-            <form:label path="State">State :</form:label>  
-            <form:input type="text" path="State" class="form-control"/>  
-            <form:errors path="State" class="alert alert-warning"/> 
-        </div>
+		
         
         <div class="form-group"> 
-        <button class="btn pull-right btn-primary">Place Order</button>
+        <button class="btn pull-right btn-danger">Place Order</button>
         </div>
 </form:form>
 </div>
-</section>
- <jsp:include page="/footer" />
+
+<jsp:include page="/footer" />
 </body>
 </html>

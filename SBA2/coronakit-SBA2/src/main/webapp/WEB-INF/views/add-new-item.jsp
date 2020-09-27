@@ -26,7 +26,7 @@
 </head>
 <body>
 	<jsp:include page="/header" />
-	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	<nav class="navbar navbar-expand-md bg-light navbar-light">
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
@@ -36,19 +36,18 @@
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath }/admin/home">ADMIN
 						DASHBOARD</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath }/admin/product-list">Products
-						List</a></li>
-				<li class="nav-item"><a class="nav-link"
+						<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath }/admin/product-entry">Add
 						Product</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath }/logout">Sign Out</a></li>
+					href="${pageContext.request.contextPath }/admin/product-list">Products
+						List</a></li>
 			</ul>
 		</div>
 	</nav>
-	<h3 class="jumbotron">Add New Product</h3>
-	<section class="container-fluid p-4">
+	 <div class="alert bg-light" style="margin:10px;">
+	<p class="font-weight-bold text-info" style="float:center;"><h5>Add a new Product</h5></p>
+
 		<div class="col-sm-4">
 			<form:form
 				action="${pageContext.request.contextPath }/admin/product-save"
@@ -56,32 +55,32 @@
 
 				<br />
 				<div class="form-group">
-					<form:label path="productName">Product Name</form:label>
+					<form:label path="productName" >Product Name</form:label>
 					<form:input type="text" path="productName" class="form-control" />
 					<form:errors path="productName" class="alert alert-warning" />
 				</div>
 				<br />
 				<div class="form-group">
 					<form:label path="cost">Product Cost</form:label>
-					<form:input type="number" path="cost" class="form-control" />
+					<form:input type="number" min="0" path="cost" class="form-control" />
 					<form:errors path="cost" class="alert alert-warning" />
 				</div>
 				<br />
 				<div class="form-group">
 					<form:label path="productDescription">Product Description</form:label>
-					<form:input type="text" path="productDescription"
+					<form:textarea type="text" path="productDescription"
 						class="form-control" />
 					<form:errors path="productDescription" class="alert alert-warning" />
 				</div>
 				<br />
 				<div class="form-group">
-					<button class="btn pull-right btn-primary">SAVE</button>
+					<button class="btn pull-right btn-info">Add Product</button>
 				</div>
 				<br />
 			</form:form>
 		</div>
-	</section>
 
-	<jsp:include page="/footer" />
+
+<jsp:include page="/footer" />
 </body>
 </html>

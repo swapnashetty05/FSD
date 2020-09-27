@@ -26,7 +26,7 @@
 </head>
 <body>
 <jsp:include page="/header" />
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<nav class="navbar navbar-expand-md bg-light navbar-light">
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -37,19 +37,16 @@
  		<li class="nav-item">
 	        <a class="nav-link" href="${pageContext.request.contextPath }/admin/home">ADMIN DASHBOARD</a>
 	      </li> 
+	        <li class="nav-item">
+	        <a class="nav-link" href="${pageContext.request.contextPath }/admin/product-entry">Add Product</a>
+	      </li>
 		<li class="nav-item">
 	        <a class="nav-link" href="${pageContext.request.contextPath }/admin/product-list">Products List</a>
 	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="${pageContext.request.contextPath }/admin/product-entry">Add Product</a>
-	      </li>
-	      <li class="nav-item">
-	      	  <a class="nav-link" href="${pageContext.request.contextPath }/logout">Sign Out</a>
-	      	</li>
 	 </ul> 
 </div>
-</nav>
-<h3 class="jumbotron">Products List</h3>
+</nav> <div class="alert bg-light" style="margin:10px;">
+<p class="font-weight-bold text-info" style="float:center;"><h5>Below are the products available in Corona-Kit</h5></p>
 <c:if test="${deleteconfirmationmsg!=null}">
 	<p class="well"> Product is Deleted.</p>
 	<br/>
@@ -58,14 +55,14 @@
         <c:when test="${productlist == null || productlist.isEmpty() }">  
             <p class="well">No Products Available to display</p>  
         </c:when>  
-        <c:otherwise>  
-            <table class="table table-striped table-hover">  
+        <c:otherwise>  </br>
+            <table class="table table-sm">  
                 <tr>  
                    <!--  <th>Product id</th>   -->
                     <th>Product Name</th>  
                     <th>Product Cost</th>  
                     <th>Product Description</th>   
-                    <th>Actions</th>                    
+                    <th></th>                    
                 </tr>  
                 <c:forEach items="${productlist}" var="product">  
                     <tr>  
@@ -74,13 +71,17 @@
                         <td>${product.cost }</td>  
                         <td>${product.productDescription}</td>                        
                         <td>
-                        <a class="btn pull-right btn-primary" href="${pageContext.request.contextPath }/admin/product-delete?productId=${product.id}">DELETE</a>                       
+                        <a href="${pageContext.request.contextPath }/admin/product-delete?productId=${product.id}"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+</svg></a>                       
                         </td>
                     </tr>  
                 </c:forEach>  
             </table>  
         </c:otherwise>  
     </c:choose>
+    </div>
 <jsp:include page="/footer" />
 </body>
 </html>

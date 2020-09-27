@@ -10,15 +10,15 @@
 
 </body>
 <footer >
-<hr />
-	<p>For any queries, contact
-Customer Service (support@spscoronakit.com)
-
+<div class="fixed-bottom bg-info text-white">
+<p>
 Copyright @ 2020. SPS Group Pvt. Ltd.
 All Rights Reserved.
 
-Reg. Address: 420, Nagarbhavi, Bangalore-01, India
+For any queries, contact
+Customer Service (support@spscoronakit.com)
+
 Head Office: 007, Kundapur, Udupi District, India </p>
-	<hr />
+</div>
 </footer>
 </html>

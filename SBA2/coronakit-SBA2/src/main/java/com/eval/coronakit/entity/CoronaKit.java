@@ -18,8 +18,20 @@ public class CoronaKit {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	/*
 	@Embedded
 	private UserAddress deliveryAddress;
+	
+	public UserAddress getDeliveryAddress() {
+		return deliveryAddress;
+	}
+	public void setDeliveryAddress(UserAddress deliveryAddress) {
+		this.deliveryAddress = deliveryAddress;
+	}
+	*/
+	@Column(name="deliveryAddress")
+	private ShippingAddress deliveryAddress;
+	
 	@Column(name="OrderDate")
 	private LocalDate orderDate;
 	@Column(name="TotalAmount")
@@ -34,10 +46,12 @@ public class CoronaKit {
 		this.id = id;
 	}
 
-	public UserAddress getDeliveryAddress() {
+	
+	
+	public ShippingAddress getDeliveryAddress() {
 		return deliveryAddress;
 	}
-	public void setDeliveryAddress(UserAddress deliveryAddress) {
+	public void setDeliveryAddress(ShippingAddress deliveryAddress) {
 		this.deliveryAddress = deliveryAddress;
 	}
 	public LocalDate getOrderDate() {

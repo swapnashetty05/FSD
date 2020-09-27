@@ -29,8 +29,7 @@
 
 	<jsp:include page="/header" />
 
-	<h1>Welcome to Corona Kit Dashboard!!!</h1>
-	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	<nav class="navbar navbar-expand-md bg-light navbar-light">
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
@@ -43,8 +42,6 @@
 						<li class="nav-item"><a class="nav-link"
 							href="${pageContext.request.contextPath }/admin/home">ADMIN
 								DASHBOARD</a></li>
-						<li class="nav-item"><a class="nav-link"
-							href="${pageContext.request.contextPath }/logout">Sign Out</a></li>
 					</ul>
 				</c:when>
 
@@ -53,8 +50,6 @@
 						<li class="nav-item"><a class="nav-link"
 							href="${pageContext.request.contextPath }/user/home">USER
 								DASHBOARD</a></li>
-						<li class="nav-item"><a class="nav-link"
-							href="${pageContext.request.contextPath }/logout">Sign Out</a></li>
 					</ul>
 				</c:when>
 
@@ -62,6 +57,8 @@
 			</c:choose>
 		</div>
 	</nav>
-	<jsp:include page="/footer" />
+	<p class="font-weight-bold text-info" style="float:center;"><h5>Welcome to Corona-Kit Dashboard</h5></p>
+	  
+<div class="fixed-bottom bg-light"><jsp:include page="/footer" /></div>
 </body>
 </html>

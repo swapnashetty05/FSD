@@ -1,7 +1,6 @@
 package com.eval.coronakit.controller;
 
 
-
 import javax.validation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,7 +40,7 @@ public class AdminController {
 		if (!result.hasErrors()) {
 			productService.addNewProduct(product);
 			model.addAttribute("msg", "Product is added successfully");
-			view="admin-home";
+			view="redirect:/admin/product-list";
 		}
 		else
 		{
@@ -63,7 +62,7 @@ public class AdminController {
 		System.out.println(productId);
 		productService.deleteProduct(productId);
 		model.addAttribute("msg", "Product is deleted successfully");
-		return "admin-home";
+		return "redirect:/admin/product-list";
 	}
 	
 }

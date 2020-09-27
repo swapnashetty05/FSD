@@ -16,26 +16,27 @@
 </head>
 <body>
 <jsp:include page="/header" />
-<h2 class="jumbotron">Please enter your LogIn details</h2>
-<section class="container-fluid p-4">
+<div class="alert bg-light" style="margin:100px;float:center;">
+<p>Please enter your login details</p>
+<div  style="float:center;width:100%;">
 <form action="${pageContext.request.contextPath}/login" method="POST">
 			<c:if test="${param.error ne null}">
-				Invalid Credentials! Access Denied!
+				Invalid Credentials! 
 			</c:if>
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 			<div class="form-group">
-			<label>UserName: <input type="text" name="unm" class="form-control"/></label>
+			<label>User Name: <input type="text" name="unm" class="form-control"/></label>
 			</div>
 			<div class="form-group">
 			<label>Password: <input type="password" name="pwd" class="form-control"/></label>
 			</div>
 			<div class="form-group">
-			<button class="btn pull-right btn-primary">Sign In</button>
+			<button class="btn btn-sm btn-info">Log In</button>
 			</div>
 			
 			
 		</form>
-</section>
-<jsp:include page="/footer" />
+</div>
+<div class="fixed-bottom bg-light"><jsp:include page="/footer" /></div>
 </body>
 </html>

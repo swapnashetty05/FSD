@@ -1,7 +1,6 @@
 package com.eval.coronakit.controller;
 
 import java.util.ArrayList;
-
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -14,17 +13,16 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginController {
 
-	
 	@RequestMapping("/custom-login")
 	public String login() {
 		return "login-form";
 	}
-	
+
 	@RequestMapping("/custom-error")
 	public String error() {
 		return "error-page";
 	}
-	
+
 	@PostMapping("/validate")
 	public String gotoLogin() {
 		String view = "loginPage";
@@ -36,7 +34,7 @@ public class LoginController {
 
 		return view;
 	}
-	
+
 	@GetMapping("/login")
 	public String validateLogin() {
 		String view = "login-form";
@@ -48,16 +46,25 @@ public class LoginController {
 
 		return view;
 	}
-		
+
 	@RequestMapping("/header")
-	public String getHeader() {
-		return  "header";
-		
+	public ModelAndView showHeader() {
+
+		ModelAndView mv = new ModelAndView("header");
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if (auth.isAuthenticated()) {
+			String role = new ArrayList<>(auth.getAuthorities()).get(0).getAuthority();
+
+			mv.addObject("unm", auth.getName());
+			mv.addObject("role", role);
+		}
+		return mv;
+
 	}
-	
+
 	@RequestMapping("/footer")
 	public String getFooter() {
-		return  "footer";
-		
+		return "footer";
+
 	}
 }
