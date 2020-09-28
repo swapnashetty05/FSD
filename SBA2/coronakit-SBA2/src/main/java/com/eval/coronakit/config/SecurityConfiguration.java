@@ -40,7 +40,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 		http.authorizeRequests()
 		.antMatchers("/admin/**").hasAuthority("ADMIN")
-		.antMatchers("/user/**").hasAuthority("USER");		
+		.antMatchers("/user/**").hasAuthority("USER")	
+		.antMatchers("/home/**").hasAnyAuthority("ADMIN","USER");
+
 
 		http.formLogin().loginPage("/login").failureUrl("/login?error=true").defaultSuccessUrl("/home")
 				.usernameParameter("unm").passwordParameter("pwd");

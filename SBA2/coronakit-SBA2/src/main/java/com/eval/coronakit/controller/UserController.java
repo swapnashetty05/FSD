@@ -46,26 +46,6 @@ public class UserController {
 	@RequestMapping("/show-cart")
 	public String showKit(HttpSession session, Model model) {
 
-		List<ProductMaster> productAddedToCarts = null;
-		Map<Integer, Integer> quantityMap = new HashMap<Integer, Integer>();
-
-		List<ProductMaster> Addedproductstocart = (List<ProductMaster>) session.getAttribute("productAddedToCart");
-		if (Addedproductstocart != null) {
-			productAddedToCarts = new ArrayList<ProductMaster>();
-			session.setAttribute("TotalQuantity", null);
-
-			for (ProductMaster prod : Addedproductstocart) {
-				if (quantityMap.containsKey(prod.getId())) {
-					quantityMap.put(prod.getId(), quantityMap.get(prod.getId()) + 1);
-				} else {
-					quantityMap.put(prod.getId(), 1);
-					productAddedToCarts.add(prod);
-				}
-			}
-			session.setAttribute("TotalQuantity", quantityMap);
-			session.setAttribute("productAddedToCart", productAddedToCarts);
-		}
-
 		return "show-cart";
 	}
 
@@ -90,7 +70,9 @@ public class UserController {
 			Addedproducts = new ArrayList<ProductMaster>();
 			Addedproducts.add(prod);
 		} else {
-			Addedproducts.add(prod);
+			if (!quantityMap.containsKey(prod.getId())) { 
+				Addedproducts.add(prod);
+			}
 		}
 		session.setAttribute("productAddedToCart", Addedproducts);
 		if (quantityMap.containsKey(prod.getId())) {

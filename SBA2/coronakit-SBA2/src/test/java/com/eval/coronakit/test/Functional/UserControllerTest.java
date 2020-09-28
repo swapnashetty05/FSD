@@ -25,6 +25,7 @@ import com.eval.coronakit.entity.ProductMaster;
 import com.eval.coronakit.service.CoronaKitService;
 import com.eval.coronakit.service.KitDetailService;
 import com.eval.coronakit.service.ProductService;
+import com.eval.coronakit.service.UserDetailsServiceImpl;
 import com.eval.coronakit.test.utils.MasterData;
 
 
@@ -43,6 +44,9 @@ public class UserControllerTest {
 	
 	@MockBean
 	CoronaKitService coronaKitService;
+	
+	@MockBean
+	private UserDetailsServiceImpl userDetailsServiceImpl;
 	
 	@MockBean
 	KitDetailService kitDetailService;

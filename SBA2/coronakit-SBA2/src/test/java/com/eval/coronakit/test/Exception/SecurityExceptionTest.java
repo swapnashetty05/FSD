@@ -24,6 +24,7 @@ import com.eval.coronakit.controller.UserController;
 import com.eval.coronakit.service.CoronaKitService;
 import com.eval.coronakit.service.KitDetailService;
 import com.eval.coronakit.service.ProductService;
+import com.eval.coronakit.service.UserDetailsServiceImpl;
 
 @WebMvcTest({AdminController.class, UserController.class})
 @RunWith(SpringRunner.class)
@@ -40,6 +41,9 @@ public class SecurityExceptionTest {
 
 	@MockBean
 	private ProductService productService;
+	
+	@MockBean
+	private UserDetailsServiceImpl userDetailsServiceImpl;
 	
 	@MockBean
 	CoronaKitService coronaKitService;

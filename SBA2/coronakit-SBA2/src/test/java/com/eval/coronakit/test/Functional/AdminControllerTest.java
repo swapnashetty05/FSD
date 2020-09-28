@@ -28,6 +28,7 @@ import com.eval.coronakit.controller.AdminController;
 import com.eval.coronakit.controller.HomeController;
 import com.eval.coronakit.entity.ProductMaster;
 import com.eval.coronakit.service.ProductService;
+import com.eval.coronakit.service.UserDetailsServiceImpl;
 import com.eval.coronakit.test.utils.MasterData;
 
 
@@ -44,6 +45,9 @@ public class AdminControllerTest {
 
 	@MockBean
 	private ProductService productService;
+	
+	@MockBean
+	private UserDetailsServiceImpl userDetailsServiceImpl;
 	
 	@Before 
 	public void setup() throws Exception {
