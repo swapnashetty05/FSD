@@ -22,7 +22,7 @@ import com.wellsfargo.fsd.its.service.UserService;
 
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserRestController {
 
 	@Autowired
@@ -49,7 +49,7 @@ public class UserRestController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<UserModel> createUser(@RequestBody @Valid UserModel user,BindingResult result) throws ITSException{
+	public ResponseEntity<UserModel> addUser(@RequestBody @Valid UserModel user,BindingResult result) throws ITSException{
 		if(result.hasErrors()) {
 			throw new ITSException(GlobalExceptionController.errMsgFrom(result));
 		}

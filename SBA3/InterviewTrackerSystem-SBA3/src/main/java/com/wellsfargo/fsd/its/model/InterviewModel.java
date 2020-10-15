@@ -50,7 +50,7 @@ public class InterviewModel {
 	}
 
 	public InterviewModel() {
-		//left unimplemented
+		
 	}	
 
 	public InterviewModel(Integer interviewId,

@@ -16,6 +16,6 @@ public interface InterviewDAO extends JpaRepository<InterviewEntity, Integer>{
 	List<InterviewEntity> findAllById(Integer iId);
 	
 	@Query("SELECT i FROM InterviewEntity i WHERE i.interviewName =:interviewName or i.interviewerName=:interviewerName")
-	List<InterviewEntity> findByNameAndInterviewer(String interviewName, String interviewerName);
+	List<InterviewEntity> findByName(String interviewName, String interviewerName);
 	
 }

@@ -17,7 +17,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 
-@SuppressWarnings("serial")
+
 @Entity
 @Table(name="interviews")
 public class InterviewEntity implements Serializable,Comparable<InterviewEntity>{
@@ -47,45 +47,15 @@ public class InterviewEntity implements Serializable,Comparable<InterviewEntity>
 	@Column(name="remarks")
 	private String remarks;
 	
-	
-    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
-    @JoinTable(name = "InterviewSchedule", 
+    
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(name = "Attendee", 
       joinColumns = @JoinColumn(name = "interviewId", referencedColumnName = "iId"), 
       inverseJoinColumns = @JoinColumn(name = "userId", referencedColumnName = "uId"))
-	private Set<UserEntity> attendees=new HashSet<>();
+	private Set<UserEntity> attendees = new HashSet<>();
 	
-	public InterviewEntity() {
-		//left unimplemented
-	}
-
-	public InterviewEntity(Integer interviewId, String interviewerName, String interviewName, String usersSkills,
-			LocalTime time, LocalDate date, String interviewStatus, String remarks, Set<UserEntity> attendees) {
-		super();
-		this.interviewId = interviewId;
-		this.interviewerName = interviewerName;
-		this.interviewName = interviewName;
-		this.usersSkills = usersSkills;
-		this.time = time;
-		this.date = date;
-		this.interviewStatus = interviewStatus;
-		this.remarks = remarks;
-		this.attendees =attendees;
-	}
-
-	public InterviewEntity(Integer interviewId, String interviewerName, String interviewName, String usersSkills,
-			LocalTime time, LocalDate date, String interviewStatus, String remarks) {
-		super();
-		this.interviewId = interviewId;
-		this.interviewerName = interviewerName;
-		this.interviewName = interviewName;
-		this.usersSkills = usersSkills;
-		this.time = time;
-		this.date = date;
-		this.interviewStatus = interviewStatus;
-		this.remarks = remarks;
-	}
-	
-	public Integer getInterviewId() {
+    
+    public Integer getInterviewId() {
 		return interviewId;
 	}
 
@@ -157,17 +127,47 @@ public class InterviewEntity implements Serializable,Comparable<InterviewEntity>
 	public void setAttendees(Set<UserEntity> attendees) {
 		this.attendees = attendees;
 	}
-
-	@Override
-	public String toString() {
-		return "Interview Details [interviewId=" + interviewId + ", interviewerName=" + interviewerName + ", interviewName=" 
-				+ interviewName + ", usersSkills=" + usersSkills + ", Interviewtime=" + time + ", Interviewdate=" + date +
-				", interviewStatus=" + interviewStatus + ", remarks=" + remarks + "]";
+	public InterviewEntity() {
+		
 	}
 
+	public InterviewEntity(Integer interviewId, String interviewerName, String interviewName, String usersSkills,
+			LocalTime time, LocalDate date, String interviewStatus, String remarks, Set<UserEntity> attendees) {
+		super();
+		this.interviewId = interviewId;
+		this.interviewerName = interviewerName;
+		this.interviewName = interviewName;
+		this.usersSkills = usersSkills;
+		this.time = time;
+		this.date = date;
+		this.interviewStatus = interviewStatus;
+		this.remarks = remarks;
+		this.attendees =attendees;
+	}
+
+	public InterviewEntity(Integer interviewId, String interviewerName, String interviewName, String usersSkills,
+			LocalTime time, LocalDate date, String interviewStatus, String remarks) {
+		super();
+		this.interviewId = interviewId;
+		this.interviewerName = interviewerName;
+		this.interviewName = interviewName;
+		this.usersSkills = usersSkills;
+		this.time = time;
+		this.date = date;
+		this.interviewStatus = interviewStatus;
+		this.remarks = remarks;
+	}
+
+	 
+	    public void removeUsers() {
+	        for(UserEntity user : new HashSet<>(this.attendees)) {
+	        	this.attendees.remove(user);
+	        	user.getInterviews().remove(this);
+	        }
+	    }
+
 	@Override
-	public int compareTo(InterviewEntity o) {
-		// TODO Auto-generated method stub
+	public int compareTo(InterviewEntity o) {	
 		return 0;
 	}
 	

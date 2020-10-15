@@ -1,6 +1,5 @@
 package com.wellsfargo.fsd.its.model;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -15,11 +14,11 @@ public class UserModel {
 	@Size(min = 5, max = 30, message = "First Name must be between 5 and 30 characters")
 	private String firstName;
 	
-	@Size(min = 3, max = 25, message = "Last Name must be between 5 and 30 characters")
+	@NotNull(message = "Last Name is mandatory")
+	@Size(min = 3, max = 25, message = "Last Name must be between 3 and 25 characters")
 	private String lastName;
 	
 	@NotNull(message = "E-mail is mandatory")
-	@Email(message="Please provide a valid email address")
 	@Pattern(regexp=".+@.+\\..+", message="Please provide a valid email address")
 	private String email;
 	
