@@ -1,0 +1,78 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-05-27T05:47:30.874Z",
+        "line": 22,
+        "name": "The home page menus",
+        "description": "",
+        "id": "browsing-around;the-home-page-menus",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2671000000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "I have opened the browser",
+            "match": {
+              "location": "stepdefs.BrowsingAround.openBrowser()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 407000000,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "I am on the home page",
+            "match": {
+              "location": "stepdefs.BrowsingAround.i_am_on_the_home_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 187000000,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "I should see the menu tabs \"Home\" \"Find owners\" \"Veterinarians\" \"Error\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Home\"",
+                  "offset": 27
+                },
+                {
+                  "val": "\"Find owners\"",
+                  "offset": 34
+                },
+                {
+                  "val": "\"Veterinarians\"",
+                  "offset": 48
+                },
+                {
+                  "val": "\"Error\"",
+                  "offset": 64
+                }
+              ],
+              "location": "stepdefs.BrowsingAround.i_should_see_the_menu_tabs(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Browsing around",
+    "description": "",
+    "id": "browsing-around",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/browsing_around.feature",
+    "tags": []
+  }
+]

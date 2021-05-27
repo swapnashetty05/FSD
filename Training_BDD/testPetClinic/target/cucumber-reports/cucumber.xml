@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="3.578">
+<testcase classname="Browsing around" name="The home page menus" time="3.36">
+<system-out><![CDATA[Given I have opened the browser.............................................passed
+And I am on the home page...................................................passed
+Then I should see the menu tabs "Home" "Find owners" "Veterinarians" "Error".passed
+]]></system-out>
+</testcase>
+</testsuite>
